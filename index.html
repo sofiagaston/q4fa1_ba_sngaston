@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Sheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="signUp" onsubmit="return information()" onfocus="">
+        <fieldset id="signUp">
+            <legend>Sign Up</legend>
+            <label for="username">Username: </label>
+            <br>
+            <input id="username" type="text" name="username" onblur="onBlurFunction(this)" onfocus="onFocusFunction(this)" required>
+            <br><br>
+            <label for="email">Email Address: </label>
+            <br>
+            <input id="email" type="text" name="email" onblur="onBlurFunction(this)" onfocus="onFocusFunction(this)" required>
+            <br><br>
+            <label for="address">Address: </label>
+            <br>
+            <input id="address" type="text" name="address" onblur="onBlurFunction(this)" onfocus="onFocusFunction(this)" required>
+            <br><br>
+            <label for="password">Password: </label>
+            <br>
+            <input id="password" type="password" name="password" onblur="onBlurFunction(this)" onfocus="onFocusFunction(this)" required>
+            <br>
+            <input type="checkbox" onclick="showPassword()">Show Password
+            <br><br>
+            <label for="gender">Select Gender: </label>
+            <br>
+            <select name="genderSelect" id="gender" onblur="onBlurFunction(this)" onfocus="onFocusFunction(this)" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Prefer not to mention">Prefer not to mention</option>
+            </select>
+            <br><br>
+            <label for="interests">Interests: </label>
+            <br>
+            <textarea id="interests" name="interests" rows="4" cols="50" onblur="onBlurFunction(this)" onfocus="onFocusFunction(this)" required></textarea>
+            <br><br>
+
+            <input type="submit" value="Submit Form">
+            <input type="reset" value="Reset">
+
+        </fieldset>
+        <fieldset>
+            <legend>Information</legend>
+            <p id="info"></p>
+        </fieldset>
+    </form>
+    <script>
+        function showPassword(){
+            var x = document.getElementById("password");
+            if(x.type === "password"){
+                x.type = "text";
+            }
+            else{
+                x.type="password";
+            }
+        }
+
+        function information(){
+            var a = document.getElementById("username").value;
+            var b = document.getElementById("email").value;
+            var c = document.getElementById("address").value;
+            var d = document.getElementById("password").value;
+            var e = document.getElementById("gender").value;
+            var f = document.getElementById("interests").value;
+
+            var infoOutput = "Username: " + a + "<br><br>Email Address: " + b + "<br><br>Address: " + c + "<br><br>Password: " + d + "<br><br>Gender: " + e + "<br><br>Interests: " + f;
+            document.getElementById("info").innerHTML = infoOutput;
+
+            return false;
+        }
+
+        function onBlurFunction(element){
+            if(element.value.trim() === ''){
+                element.style.borderColor = 'red';
+            } 
+        }
+
+        function onFocusFunction(element){
+            element.style.borderColor = 'green';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    background-image: url(bg.gif);
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+form {
+    text-align: center;
+    width: 40vw;
+}
+
+fieldset {
+    background-color: antiquewhite;
+    opacity: 0.75;
+    border-radius: 25px;
+    border: solid 2px purple;
+}
+
+legend {
+    font-size: xx-large;
+    text-shadow: rgb(55, 16, 73) 2px 2px;
+    color: rgb(136, 104, 146);
+}
